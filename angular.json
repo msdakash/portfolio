@@ -11,7 +11,7 @@
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "pf",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -62,7 +62,10 @@
               "buildTarget": "PortfolioApp:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 3000
+          }
         },
         "test": {
           "builder": "@angular/build:unit-test"
