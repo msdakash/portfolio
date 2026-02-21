@@ -1,9 +1,12 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {Router, RouterOutlet} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'pf-header',
   templateUrl: './header.html',
+  imports: [
+    RouterLink
+  ],
   styleUrl: './header.css'
 })
 export class Header implements OnInit {

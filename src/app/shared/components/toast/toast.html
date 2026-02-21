@@ -1,0 +1,30 @@
+@if (show) {
+  <div
+
+    class="fixed top-5 right-5 z-50 animate-slide-in"
+  >
+
+    <div
+      class="flex items-center gap-3 px-5 py-4 rounded-xl shadow-xl text-white min-w-[250px]"
+      [ngClass]="{
+      'bg-green-600': type === 'success',
+      'bg-red-600': type === 'error',
+      'bg-blue-600': type === 'info'
+    }"
+    >
+
+      <!-- Message -->
+      <span class="flex-1">{{ message }}</span>
+
+      <!-- Close button -->
+      <button
+        (click)="close()"
+        class="font-bold hover:text-gray-200"
+      >
+        ✕
+      </button>
+
+    </div>
+
+  </div>
+}
