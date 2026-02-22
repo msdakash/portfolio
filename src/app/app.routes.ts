@@ -4,6 +4,7 @@ import {ContactMe} from './features/contact-me/contact-me';
 import {Experience} from './features/experience/experience';
 import {Skills} from './features/skills/skills';
 import {Education} from './features/education/education';
+import {Projects} from './features/projects/projects';
 
 export const routes: Routes = [
 
@@ -23,6 +24,9 @@ export const routes: Routes = [
   },
   {
     path: 'education', component: Education
+  },
+  {
+    path: 'projects', component: Projects
   },
   {
     path: "**",
