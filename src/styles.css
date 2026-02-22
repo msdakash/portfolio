@@ -8,6 +8,22 @@ html, body {
   height: 100%;
 }
 
+:host {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+/* or target the header element */
+.header {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
 @keyframes gradientMove {
 
   0% { background-position: 0 50%; }
@@ -37,4 +53,66 @@ html, body {
 
 .animate-slide-in {
   animation: slide-in 0.3s ease-out;
+}
+
+.spring {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.timeline-card {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+}
+
+.animate-visible {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+
+@keyframes drawLine {
+  from { height: 0; }
+  to { height: 100%; }
+}
+
+.gradient-line {
+  background: linear-gradient(
+    180deg,
+    #3b82f6,
+    #06b6d4,
+    #8b5cf6,
+    #3b82f6
+  );
+  background-size: 100% 300%;
+  animation: gradientMove 6s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+.gradient-line {
+  background: linear-gradient(
+    180deg,
+    #3b82f6,
+    #06b6d4,
+    #8b5cf6,
+    #3b82f6
+  );
+  background-size: 100% 300%;
+  animation: gradientMove 6s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(6px);
 }

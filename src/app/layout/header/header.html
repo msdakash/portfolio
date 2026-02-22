@@ -1,4 +1,4 @@
-<nav class="  sticky shadow-lg border-b dark:bg-gray-900 text-black dark:text-white cursor-default">
+<nav class="sticky top-0 z-50 bg-white dark:bg-gray-900 border-b shadow-sm text-black dark:text-white header">
   <div class="max-w-screen-2xl mx-auto px-6">
 
     <div class="flex items-center justify-between h-16">
@@ -16,7 +16,7 @@
         </a>
 
 
-        <a routerLink="/projects"
+        <a routerLink="/experiences"
            class="hover:text-blue-400 transition duration-200 cursor-pointer">
           Experience
         </a>
@@ -45,6 +45,7 @@
       <!-- Right side button -->
       <div class="hidden md:block">
         <button
+          (click)="downloadResume()"
           class="bg-gray-200 dark:bg-gray-800  hover:text-blue-600 dark:hover:text-blue-400 px-4 py-2 rounded-lg font-medium transition duration-200">
           Resume
         </button>

@@ -66,5 +66,13 @@ export class Header implements OnInit {
     }
   }
 
+  public downloadResume(){
+    const link = document.createElement('a');
+    link.href = 'Latest Resume Akash Shaw.pdf';
+    link.download = 'Akash_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+  }
+
 }
 
