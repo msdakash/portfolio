@@ -134,41 +134,16 @@
 
   <!-- Mobile Menu -->
   @if (isMenuOpen) {
-    <div class="md:hidden bg-gray-800 px-6 py-4 space-y-4">
+    <div class="md:hidden bg-gray-800 px-6 py-4 flex flex-col gap-4">
 
-      <a routerLink="/"
-         class="hover:text-blue-400 transition duration-200 cursor-pointer">
-        About Me
-      </a>
+      <a routerLink="/" class="block hover:text-blue-400">About Me</a>
+      <a routerLink="/experiences" class="block hover:text-blue-400">Experience</a>
+      <a routerLink="/skills" class="block hover:text-blue-400">Skills & Tools</a>
+      <a routerLink="/about" class="block hover:text-blue-400">Projects</a>
+      <a routerLink="/education" class="block hover:text-blue-400">Education</a>
+      <a routerLink="/contact-me" class="block hover:text-blue-400">Contact</a>
 
-
-      <a routerLink="/experiences"
-         class="hover:text-blue-400 transition duration-200 cursor-pointer">
-        Experience
-      </a>
-
-
-      <a routerLink="/skills"
-         class="hover:text-blue-400 transition duration-200 cursor-pointer">
-        Skills & Tools
-      </a>
-
-      <a routerLink="/about"
-         class="hover:text-blue-400 transition duration-200 cursor-pointer">
-        Projects
-      </a>
-
-      <a routerLink="/contact"
-         class="hover:text-blue-400 transition duration-200 cursor-pointer">
-        Education
-      </a>
-      <a routerLink="/contact-me"
-         class="hover:text-blue-400 transition duration-200 cursor-pointer">
-        Contact
-      </a>
-
-      <button
-        class="bg-blue-600 hover:bg-blue-700 px-2 py-1 rounded-lg font-medium transition duration-200">
+      <button class="bg-blue-600 hover:bg-blue-700 px-2 py-2 rounded-lg">
         Resume
       </button>
 
