@@ -116,3 +116,46 @@ html, body {
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(6px);
 }
+
+
+
+/* Scroll Reveal */
+.skill-section {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.animate-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* 3D Tilt */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease;
+}
+
+/* Glow Border */
+.glow-border {
+  border-radius: 1rem;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    #3b82f6,
+    #8b5cf6,
+    #06b6d4
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tilt-card:hover .glow-border {
+  opacity: 1;
+}
+
+/* Keep content above glow */
+.tilt-card > * {
+  position: relative;
+  z-index: 2;
+}

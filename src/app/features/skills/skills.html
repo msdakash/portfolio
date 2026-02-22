@@ -1,0 +1,78 @@
+<section class="py-20 bg-white dark:bg-gray-950">
+
+  <div class="max-w-screen-2xl mx-auto px-6">
+
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">
+      Technical Skills
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-10">
+
+      @for (category of skillCategories; track category.title) {
+
+        <!-- Category Card -->
+        <div #sectionCard
+             class="skill-section opacity-0 translate-y-10
+                    bg-gray-50 dark:bg-gray-900
+                    border border-gray-200 dark:border-gray-800
+                    rounded-2xl p-8
+                    transition duration-500">
+
+          <h3 class="text-xl font-semibold mb-8">
+            {{ category.title }}
+          </h3>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+
+            @for (skill of category.skills; track skill.name) {
+
+              <!-- Individual Skill Card -->
+              <div #tiltCard
+                   class="tilt-card group relative
+                          flex flex-col items-center
+                          rounded-xl p-6
+                          bg-white dark:bg-gray-800
+                          border border-transparent
+                          transition-all duration-300">
+
+                <!-- Glow Border -->
+                <div class="absolute inset-0 rounded-xl glow-border pointer-events-none"></div>
+
+                <!-- Icon -->
+                <img
+                  [src]="skill.icon"
+                  alt="{{ skill.name }}"
+                  class="w-12 h-12 mb-4 object-contain
+                         group-hover:scale-110
+                         transition duration-300"
+                />
+
+                <!-- Name -->
+                <span class="text-sm font-medium mb-3">
+                  {{ skill.name }}
+                </span>
+
+                <!-- Skill Bar -->
+                <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded-full overflow-hidden">
+                  <div
+                    class="h-2 bg-gradient-to-r from-blue-500 to-purple-500
+                           transition-all duration-700"
+                    [style.width.%]="skill.level">
+                  </div>
+                </div>
+
+              </div>
+
+            }
+
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+
+</section>

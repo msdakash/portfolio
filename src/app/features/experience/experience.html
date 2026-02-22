@@ -1,6 +1,6 @@
 <section class="py-20 bg-white dark:bg-gray-950">
 
-  <div class="max-w-6xl mx-auto px-6">
+  <div class="max-w-screen-2xl mx-auto px-6">
 
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">
       Experience
@@ -53,16 +53,17 @@
                   {{ exp.period }}
                 </p>
 
-                <ul class="mt-4 space-y-2 text-gray-700 dark:text-gray-300">
+                <ul class="mt-4 space-y-4 text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
 
                   @for (item of exp.description; track $index) {
 
-                    <li
-                      class="flex gap-2 justify-start"
-                      [ngClass]="i % 2 === 0 ? 'md:justify-end' : ''">
+                    <li class="flex items-start gap-3">
 
-                      <span class="w-2 h-2 bg-blue-500 rounded-full mt-2"></span>
-                      <span>{{ item }}</span>
+                      <!-- Bullet -->
+                      <span class="mt-2 w-2 h-2 bg-blue-500 rounded-full shrink-0"></span>
+
+                      <!-- Text -->
+                      <span class="flex-1 leading-relaxed">{{ item }}</span>
 
                     </li>
 
