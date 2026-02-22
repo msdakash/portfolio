@@ -91,7 +91,14 @@ export class Experience implements AfterViewInit {
 
     }, {threshold: 0.2});
 
-    this.cards.forEach(card => observer.observe(card.nativeElement));
+    this.cards.forEach(card => {
+      observer.observe(card.nativeElement)
+
+      const rect = card.nativeElement.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        card.nativeElement.classList.add('animate-visible');
+      }
+    });
 
   }
 }

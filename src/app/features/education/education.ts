@@ -40,20 +40,26 @@ export class Education implements AfterViewInit {
       logo: 'logos/WBBSE.png',
     }
   ];
+
   public ngAfterViewInit() {
-
     const observer = new IntersectionObserver((entries) => {
-
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-visible');
         }
       });
+    }, { threshold: 0.2 });
 
-    }, {threshold: 0.2});
+    this.cards.forEach(card => {
+      observer.observe(card.nativeElement);
 
-    this.cards.forEach(card => observer.observe(card.nativeElement));
-
+      // Check if card is already visible on initial load
+      const rect = card.nativeElement.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        card.nativeElement.classList.add('animate-visible');
+      }
+    });
   }
+
 
 }
