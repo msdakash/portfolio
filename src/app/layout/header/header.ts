@@ -5,7 +5,7 @@ import {Router, RouterLink} from '@angular/router';
   selector: 'pf-header',
   templateUrl: './header.html',
   imports: [
-    RouterLink
+    RouterLink,
   ],
   styleUrl: './header.css'
 })
@@ -66,7 +66,7 @@ export class Header implements OnInit {
     }
   }
 
-  public downloadResume(){
+  public downloadResume() {
     const link = document.createElement('a');
     link.href = 'Latest Resume Akash Shaw.pdf';
     link.download = 'Akash_Resume.pdf';

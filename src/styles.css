@@ -13,24 +13,31 @@ html, body {
   top: 0;
   z-index: 50;
 }
+
 /* or target the header element */
 .header {
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(6px);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
 }
 
 @keyframes gradientMove {
 
-  0% { background-position: 0 50%; }
+  0% {
+    background-position: 0 50%;
+  }
 
-  50% { background-position: 100% 50%; }
+  50% {
+    background-position: 100% 50%;
+  }
 
-  100% { background-position: 0 50%; }
+  100% {
+    background-position: 0 50%;
+  }
 
 }
 
@@ -71,8 +78,12 @@ html, body {
 
 
 @keyframes drawLine {
-  from { height: 0; }
-  to { height: 100%; }
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
 }
 
 .gradient-line {
@@ -88,8 +99,12 @@ html, body {
 }
 
 @keyframes gradientMove {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 0% 100%; }
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
 }
 
 .gradient-line {
@@ -105,18 +120,21 @@ html, body {
 }
 
 @keyframes gradientMove {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 0% 100%; }
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
 }
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255,255,255,0.95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(6px);
 }
-
 
 
 /* Scroll Reveal */
@@ -133,7 +151,7 @@ html, body {
 /* 3D Tilt */
 .tilt-card {
   transform-style: preserve-3d;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 /* Glow Border */
@@ -144,17 +162,51 @@ html, body {
     135deg,
     #3b82f6,
     #8b5cf6,
-    #06b6d4
+    #06b6d4,
+    #3b82f6
   );
   opacity: 0;
+  background-size: 300% 300%;
   transition: opacity 0.3s ease;
+  animation: borderMove 6s linear infinite;
 }
 
 .tilt-card:hover .glow-border {
   opacity: 1;
 }
 
-/* Keep content above glow */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation: paused;
+}
+
+@keyframes borderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Subtle glow shadow */
+.tilt-card:hover {
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.15);
+}
+
+/* Keep content above border */
 .tilt-card > * {
   position: relative;
   z-index: 2;

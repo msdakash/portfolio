@@ -57,7 +57,8 @@ export class Skills  implements AfterViewInit{
         { name: 'GitHub', icon: 'https://cdn.simpleicons.org/github', level: 85 },
         { name: 'Jira', icon: 'https://cdn.simpleicons.org/jira', level: 85 },
         { name: 'Figma', icon: 'https://cdn.simpleicons.org/figma', level: 75 },
-        { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg', level: 95 }
+        { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg', level: 90 },
+        { name: 'WebStorm', icon: 'https://cdn.simpleicons.org/webstorm', level: 95 },
       ]
     }
   ];

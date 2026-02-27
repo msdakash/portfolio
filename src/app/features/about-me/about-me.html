@@ -12,7 +12,8 @@
         </h2>
 
         <p class="mt-6 text-gray-600 dark:text-gray-400  mx-auto text-xl">
-          I am a frontend-focused software engineer with strong expertise in Angular and React,
+          I am a frontend-focused software engineer with {{ calculateExperience() }}+ years of experience in Angular
+          and React,
           dedicated to creating fast, responsive, and maintainable web applications.
         </p>
 
@@ -27,7 +28,9 @@
         </p>
 
         <div class="mt-8 flex justify-start gap-4">
-          <button class=" bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg  transition spring hover:scale-110 active:scale-95 ">
+          <button
+            class=" bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg  transition spring hover:scale-110 active:scale-95 "
+            (click)="navigateToProjects()">
             View Projects
           </button>
           <button

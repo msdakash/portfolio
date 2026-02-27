@@ -12,7 +12,6 @@ import {Router} from '@angular/router';
 })
 export class AboutMe {
   private readonly router = inject<Router>(Router)
-
   public words: string[] = [
     "Frontend Engineer",
     "Angular Specialist",
@@ -25,5 +24,28 @@ export class AboutMe {
     this.router.navigate(['contact-me']);
 
     return
+  }
+
+  public navigateToProjects(): void {
+    this.router.navigate(['projects']);
+
+    return
+  }
+
+  public calculateExperience(): number {
+    const startYear = 2018;
+    const startMonth = 5; // May
+    const today = new Date();
+    const currentYear = today.getFullYear();
+    const currentMonth = today.getMonth() + 1; // JS months are 0–11
+
+    let years = currentYear - startYear;
+
+    // If current month is before start month, subtract 1 year
+    if (currentMonth < startMonth) {
+      years--;
+    }
+
+    return years;
   }
 }
